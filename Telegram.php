@@ -6,7 +6,7 @@ if (file_exists('TelegramErrorLogger.php')) {
 
 /**
  * Telegram Bot Class.
- * Edited by @ark_1996 AlirezaKarimi1996 on GitHub
+ *
  * @author Gabriele Grillo <gabry.grillo@alice.it>
  */
 class Telegram
@@ -1842,17 +1842,78 @@ class Telegram
     {
         return $this->data['message']['reply_to_message']['message_id'];
     }
+	// added by @ark_1996 and MOHSEN start and Edited
+    /// Get the reply_to_message text of the current message
+
+    /**
+     * \return the String reply_to_message text.
+     */
+    public function ReplyToMessageText()
+    {
+        return $this->data['message']['reply_to_message']['text'];
+    }
+	
+    /// Get the reply_to_message from user username of the current message
+
+    /**
+     * \return the String reply_to_message from username.
+     */
+    public function ReplyToMessageFromUsername()
+    {
+        return $this->data['message']['reply_to_message']['from']['username'];
+    }
+	
+    /// Get the reply_to_message from user first_name of the current message
+
+    /**
+     * \return the String reply_to_message from first_name.
+     */
+    public function ReplyToMessageFromUserFirstName()
+    {
+        return $this->data['message']['reply_to_message']['from']['first_name'];
+    }
+	
+    /// Get the reply_to_message from user last_name of the current message
+
+    /**
+     * \return the String reply_to_message from last_name.
+     */
+    public function ReplyToMessageFromUserLastName()
+    {
+        return $this->data['message']['reply_to_message']['from']['last_name'];
+    }
+
+	// new chat member first name
+	public function NewChatMemberFirstName()
+    {
+        return $this->data['message']['new_chat_member']['first_name'];
+    }
+	// new chat member lastname
+	public function NewChatMemberLastName()
+    {
+        return $this->data['message']['new_chat_member']['last_name'];
+    }
+
+    /// Get the reply_to_message from user id of the current message
+
+    /**
+     * \return the String reply_to_message from user id.
+     */
+    public function ReplyToMessageFromUserID()
+    {
+        return $this->data['message']['reply_to_message']['from']['id'];
+    }	
 
     /// Get the reply_to_message forward_from user_id of the current message
 
     /**
      * \return the String reply_to_message forward_from user_id.
      */
-    public function ReplyToMessageFromUserID()
+    public function ReplyToMessageForwardFromUserID()
     {
         return $this->data['message']['reply_to_message']['forward_from']['id'];
     }
-
+	// added by @ark_1996 and MOHSEN end
     /// Get the inline_query of the current update
 
     /**
